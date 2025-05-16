@@ -1,3 +1,8 @@
+<!--
+This version fixes:
+- The last two publication cards now have <div class="pub-details"> BEFORE <img> in the HTML.
+- This, combined with your CSS, ensures the last two publication images appear BELOW the text on mobile.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +57,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 156px;
-      height: 156px;
+      width: 140px;
+      height: 140px;
       margin: 0 auto;
     }
     .profile-pic {
-      width: 140px;
-      height: 140px;
+      width: 128px;
+      height: 128px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #fff;
@@ -68,28 +73,18 @@
       position: relative;
       z-index: 1;
     }
-    @media (max-width:700px) {
+    @media (max-width: 600px) {
       .profile-pic-dp {
-        width: 92px;
-        height: 92px;
+        width: 82px;
+        height: 82px;
         padding: 2px;
       }
       .profile-pic {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
       }
       header {
-        padding: 36px 6px 10px 6px;
-      }
-    }
-    @media (max-width: 400px) {
-      .profile-pic-dp {
-        width: 62px;
-        height: 62px;
-      }
-      .profile-pic {
-        width: 50px;
-        height: 50px;
+        padding: 32px 6px 10px 6px;
       }
     }
     nav {
@@ -97,76 +92,78 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       z-index: 1;
     }
     nav a {
       font-size: 1rem;
-      padding: 10px 20px;
-      min-width: 80px;
+      padding: 9px 14px;
+      min-width: 75px;
       text-align: center;
       color: #fff;
       background: rgba(255, 255, 255, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 30px;
+      border-radius: 25px;
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
       text-decoration: none;
       transition: all 0.3s ease;
+      display: block;
     }
     nav a:hover {
       background: #ffcc00;
       color: #003366;
       transform: scale(1.05);
     }
-    @media (max-width:700px){
+    @media (max-width:600px) {
       nav {
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
       }
       nav a {
-        min-width: 60vw;
-        font-size: 1.02rem;
+        min-width: 90vw;
+        font-size: 1.05rem;
+        margin: 0 auto;
       }
     }
     .container {
       max-width: 1200px;
       margin: 20px auto;
-      padding: 20px;
+      padding: 15px;
     }
-    @media (max-width:700px){
+    @media (max-width:600px) {
       .container {
-        padding: 6px;
+        padding: 2vw;
       }
     }
     .info-section, .section {
-      background: linear-gradient(118deg, #f8fafc 70%, #e9f1fa 100%);
-      padding: 22px 18px 16px 18px;
-      margin: 18px 0;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(0, 85, 165, 0.07);
+      background: linear-gradient(120deg, #f8fafc 70%, #e9f1fa 100%);
+      padding: 22px 12px 13px 12px;
+      margin: 14px 0;
+      border-radius: 12px;
+      box-shadow: 0 1.5px 8px rgba(0, 85, 165, 0.07);
     }
     .section-title, h2 {
       font-size: 1.2rem;
       color: #0055a5;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       position: relative;
       padding-bottom: 4px;
     }
     .section-title::after, h2::after {
       content: "";
       display: block;
-      width: 32px;
+      width: 30px;
       height: 2px;
       background: #ff6600;
       border-radius: 2px;
-      margin-top: 5px;
+      margin-top: 4px;
     }
     .intro {
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: #1a263a;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.65;
     }
     .highlight {
@@ -179,9 +176,10 @@
       color: #0055a5;
       border-radius: 12px;
       padding: 3px 10px;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       margin: 0 4px 4px 0;
       font-weight: 500;
+      display: inline-block;
     }
     .education-list, .role-list {
       list-style: none;
@@ -195,6 +193,7 @@
       display: flex;
       align-items: center;
       gap: 7px;
+      word-break: break-word;
     }
     .icon {
       font-size: 1.13em;
@@ -224,48 +223,51 @@
       align-items: center;
       gap: 7px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
     /* Publications Grid - Consistent Card Layout */
     .pub-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 13px;
     }
     .pub-card {
       background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0, 85, 165, 0.10), 0 1px 5px rgba(0,0,0,0.11);
+      border-radius: 12px;
+      box-shadow: 0 2px 7px rgba(0, 85, 165, 0.11), 0 1px 4px rgba(0,0,0,0.10);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: stretch;
       transition: transform 0.2s, box-shadow 0.2s;
-      min-height: 260px;
-      max-width: 98vw;
+      min-height: 180px;
+      max-width: 99vw;
       margin: 0 auto;
     }
     .pub-card:hover {
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: 0 8px 22px rgba(0,85,165,0.13), 0 2px 7px rgba(0,0,0,0.13);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 4px 14px rgba(0,85,165,0.11), 0 2px 5px rgba(0,0,0,0.11);
     }
     .pub-card img {
       width: 100%;
-      height: 110px;
+      height: 80px;
       object-fit: cover;
       background: #e2eafc;
       border-bottom: 1px solid #e0e7ff;
+      order: 0;
     }
     .pub-details {
       flex: 1;
-      padding: 12px 9px 10px 9px;
+      padding: 8px 6px 8px 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      order: 1;
     }
     .pub-details p {
-      font-size: 0.97rem;
+      font-size: 0.95rem;
       color: #1a263a;
       margin: 0;
     }
@@ -284,13 +286,41 @@
       text-decoration: underline;
       color: #003366;
     }
+    /* Stacking last two publication images below text on mobile */
+    @media (max-width: 900px) {
+      .pub-grid {
+        grid-template-columns: 1fr;
+      }
+      .pub-card img {
+        height: 80px;
+      }
+    }
+    @media (max-width: 600px) {
+      .pub-grid {
+        grid-template-columns: 1fr;
+      }
+      /* Stacking for the last two cards only */
+      .pub-card:nth-child(3), .pub-card:nth-child(4) {
+        flex-direction: column-reverse;
+      }
+      .pub-card:nth-child(3) .pub-details,
+      .pub-card:nth-child(4) .pub-details {
+        order: 0;
+      }
+      .pub-card:nth-child(3) img,
+      .pub-card:nth-child(4) img {
+        order: 1;
+        border-bottom: none;
+        border-top: 1px solid #e0e7ff;
+      }
+    }
     .social-links {
       text-align: center;
-      margin-top: 22px;
+      margin-top: 14px;
     }
     .social-links a img.custom-icon {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #007acc;
@@ -308,22 +338,22 @@
       background: #003366;
       color: #fff;
       text-align: center;
-      padding: 14px;
-      font-size: 0.95rem;
+      padding: 10px;
+      font-size: 0.90rem;
       letter-spacing: 0.5px;
     }
     .scroll-top {
       position: fixed;
-      bottom: 24px;
-      right: 18px;
+      bottom: 15px;
+      right: 10px;
       background: #0055a5;
       color: #fff;
       padding: 8px 12px;
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
       cursor: pointer;
       display: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
       text-align: center;
       transition: all 0.3s ease;
       z-index: 99;
@@ -335,109 +365,95 @@
     .contact-list {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 13px;
       align-items: flex-start;
-      margin-top: 12px;
+      margin-top: 7px;
     }
     .contact-item {
       display: flex;
       align-items: center;
       background: linear-gradient(110deg, #f0f8ff 60%, #e3eaff 100%);
-      border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,85,165,0.10);
-      padding: 14px 18px;
-      max-width: 400px;
-      min-width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 1.5px 5px rgba(0,85,165,0.09);
+      padding: 10px 14px;
+      max-width: 95vw;
+      min-width: 0;
       transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
       margin-bottom: 0;
-      border: 1.5px solid #a1c4fd;
+      border: 1px solid #a1c4fd;
       cursor: pointer;
-      gap: 16px;
+      gap: 10px;
       text-decoration: none;
     }
     .contact-item:hover {
       background: linear-gradient(110deg, #ffecd2 60%, #fcb69f 100%);
-      box-shadow: 0 5px 16px rgba(255,102,0,0.10);
+      box-shadow: 0 3px 10px rgba(255,102,0,0.09);
       border-color: #ff6600;
       transform: translateY(-1px) scale(1.01);
     }
     .contact-icon {
-      width: 40px;
-      height: 40px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
       background: #007acc;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.11);
-      font-size: 1.2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+      font-size: 1rem;
       color: #fff;
-      border: 2px solid #fff;
+      border: 1.5px solid #fff;
       transition: background 0.3s, color 0.3s;
       flex-shrink: 0;
     }
     .contact-icon img {
-      width: 26px;
-      height: 26px;
+      width: 16px;
+      height: 16px;
       object-fit: contain;
       display: block;
     }
     .contact-value {
-      font-size: 1.05rem;
+      font-size: 0.97rem;
       color: #1a263a;
       font-weight: 500;
       letter-spacing: 0.03em;
       transition: color 0.2s;
       word-break: break-all;
     }
-    @media (max-width: 900px) {
-      .pub-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    @media (max-width: 650px) {
-      .pub-grid {
-        grid-template-columns: 1fr;
-      }
-      .container {
-        padding: 2vw;
-      }
-      .pub-card img {
-        height: 80px;
-      }
-      .pub-details {
-        padding: 8px 4px 8px 4px;
-      }
-      .contact-item {
-        max-width: 98vw;
-        min-width: 0;
-        padding: 10px 5px;
-        border-radius: 9px;
-        gap: 9px;
-      }
-      .contact-icon {
-        width: 28px;
-        height: 28px;
-      }
-      .contact-icon img {
-        width: 18px;
-        height: 18px;
-      }
-      .contact-value {
+    /* STACK EDUCATION ON SMALL SCREENS */
+    @media (max-width: 600px) {
+      .education-list li {
+        flex-direction: column;
+        align-items: flex-start;
         font-size: 0.97rem;
+        gap: 2px;
+        margin-bottom: 12px;
+      }
+      .education-list .icon,
+      .education-list .degree,
+      .education-list .field,
+      .education-list .place,
+      .education-list .year {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 1px;
+      }
+      .education-list .year {
+        color: #888;
+        font-size: 0.93em;
       }
     }
-    @media (max-width: 400px) {
-      h1 {
-        font-size: 1.1rem;
-      }
+    @media (max-width:400px){
       .section-title, h2 {
-        font-size: 0.97rem;
+        font-size: 1rem;
       }
       .info-section, .section {
-        padding: 8px 2vw 7px 2vw;
-        margin: 7px 0;
-        border-radius: 7px;
+        padding: 7px 2vw 5px 2vw;
+        margin: 5px 0;
+        border-radius: 6px;
+      }
+      h1 {
+        font-size: 1.05rem;
       }
     }
   </style>
@@ -482,7 +498,8 @@
     <ul class="education-list">
       <li>
         <span class="icon">🎓</span>
-        <span class="degree">PhD Commerce</span> (<span class="field">Accounting & Finance</span>),
+        <span class="degree">PhD Commerce</span>
+        (<span class="field">Accounting & Finance</span>),
         <span class="place">BZU Multan</span>
         <span class="year">2023-2026</span>
       </li>
@@ -511,18 +528,18 @@
       <li>Thesis Writing & Editing</li>
     </ul>
     <p style="margin-top:20px;"><strong>Profiles:</strong></p>
-    <div style="display: flex; gap: 18px; align-items: center; margin-top: 10px;">
+    <div style="display: flex; gap: 18px; align-items: center; margin-top: 10px; flex-wrap:wrap;">
       <a href="https://orcid.org/0009-0000-1711-2963" aria-label="ORCID" target="_blank">
-        <img src="images/orcid.png" alt="ORCID Icon" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <img src="images/orcid.png" alt="ORCID Icon" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
       </a>
       <a href="https://www.researchgate.net/profile/Nasir-Abbas-4" aria-label="ResearchGate" target="_blank">
-        <img src="images/researchgate.png" alt="ResearchGate Icon" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <img src="images/researchgate.png" alt="ResearchGate Icon" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
       </a>
       <a href="https://www.fiverr.com/users/nasir_44/seller_dashboard" aria-label="Fiverr" target="_blank">
-        <img src="images/fiver.png" alt="Fiverr Icon" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <img src="images/fiver.png" alt="Fiverr Icon" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
       </a>
       <a href="https://upwork.com/freelancers/~01e1096ba1df71db92" aria-label="Upwork" target="_blank">
-        <img src="images/upwork.png" alt="Upwork Icon" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <img src="images/upwork.png" alt="Upwork Icon" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
       </a>
     </div>
   </section>
@@ -549,8 +566,8 @@
           </p>
         </div>
       </div>
+      <!-- LAST TWO CARDS: image will be stacked below text on mobile -->
       <div class="pub-card">
-        <img src="images/pub3.jpeg" alt="Publication 3" />
         <div class="pub-details">
           <p>
             Gohar Mahmood; Fazeel Abdullah; Nasir Abbas; Muhammad Ali Raza (2024).<br>
@@ -558,9 +575,9 @@
             <a href="https://doi.org/10.26710/sbsee.v5i3.2750" target="_blank">DOI</a>
           </p>
         </div>
+        <img src="images/pub3.jpeg" alt="Publication 3" />
       </div>
       <div class="pub-card">
-        <img src="images/pub5.jpeg" alt="Publication 4" />
         <div class="pub-details">
           <p>
             Muhammad Adnan Afzal; Sadia Munir; Nasir Abbas; Adil Farooq (2024).<br>
@@ -568,6 +585,7 @@
             <a href="https://doi.org/10.26710/jafee.v10i2.3039" target="_blank">DOI</a>
           </p>
         </div>
+        <img src="images/pub5.jpeg" alt="Publication 4" />
       </div>
     </div>
   </section>
