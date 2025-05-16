@@ -20,7 +20,7 @@
       background-color: #a1c4fd;
     }
     header {
-      background: url('images/background.jpeg') center/cover no-repeat;
+      background: url('https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbrbfapa0t74z6e09xiq0.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 80px 20px 30px 20px;
@@ -215,157 +215,85 @@
       transform: scale(1.1);
     }
 
-    /* Contact Section Styling */
     .contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      align-items: flex-start;
-      margin-top: 18px;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(110deg, #f0f8ff 60%, #e3eaff 100%);
-      border-radius: 14px;
-      box-shadow: 0 3px 10px rgba(0,85,165,0.10);
-      padding: 14px 22px;
-      min-width: 320px;
-      max-width: 500px;
-      transition: background 0.25s, box-shadow 0.25s;
-      margin-bottom: 0;
-      border: 1.5px solid #a1c4fd;
-    }
-    .contact-item:hover {
-      background: linear-gradient(110deg, #ffecd2 60%, #fcb69f 100%);
-      box-shadow: 0 7px 20px rgba(255,102,0,0.10);
-      border-color: #ff6600;
-    }
-    .contact-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #007acc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 18px;
-      box-shadow: 0 2px 7px rgba(0,0,0,0.12);
-      font-size: 1.6rem;
-      color: #fff;
-      border: 2px solid #fff;
-      transition: background 0.3s, color 0.3s;
-    }
-    .contact-icon img {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      display: block;
-    }
-    .contact-item:hover .contact-icon {
-      background: #ff6600;
-      color: #fffbe7;
-    }
-    .contact-value, .contact-value a {
-      font-size: 1.18rem;
-      color: #1a263a;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
-    }
-    .contact-item:hover .contact-value, 
-    .contact-item:hover .contact-value a {
-      color: #003366;
-    }
-    .contact-value a:hover {
-      text-decoration: underline;
-      color: #ff6600;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  margin-top: 18px;
+}
 
-    @media (max-width: 900px) {
-      .container {
-        padding: 10px;
-      }
-      .pub-grid {
-        gap: 18px;
-      }
-      .pub-card img {
-        height: 140px;
-      }
-    }
-    @media screen and (max-width: 700px) {
-      nav {
-        flex-direction: column;
-        gap: 7px;
-      }
-      nav a {
-        font-size: 1.04rem;
-        min-width: 70vw;
-        margin: 0 auto;
-      }
-      header {
-        padding: 45px 8px 16px 8px;
-      }
-      .profile-pic {
-        width: 110px;
-        height: 110px;
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-      .container {
-        padding: 2vw;
-      }
-    }
-    @media (max-width: 600px) {
-      .pub-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-      .pub-card img {
-        height: 110px;
-      }
-      .pub-details {
-        padding: 10px 4px 10px 4px;
-      }
-    }
-    @media screen and (max-width: 500px) {
-      .section {
-        padding: 13px 4px;
-        margin: 13px 0;
-        border-radius: 9px;
-      }
-      h2 {
-        font-size: 1rem;
-        margin-bottom: 6px;
-      }
-      .profile-pic {
-        width: 75px;
-        height: 75px;
-        border-radius: 50%;
-      }
-      .contact-list, .contact-item {
-        min-width: unset;
-        width: 100%;
-        max-width: 100vw;
-        padding: 12px 8px;
-        border-radius: 9px;
-      }
-      .contact-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.3rem;
-        margin-right: 10px;
-        border-radius: 9px;
-      }
-      .contact-icon img {
-        width: 28px;
-        height: 28px;
-      }
-      .contact-value, .contact-value a {
-        font-size: 1.07rem;
-      }
+.contact-item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(110deg, #f0f8ff 60%, #e3eaff 100%);
+  border-radius: 18px;
+  box-shadow: 0 3px 10px rgba(0,85,165,0.10);
+  padding: 18px 28px;
+  max-width: 500px;
+  min-width: 320px;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+  margin-bottom: 0;
+  border: 1.5px solid #a1c4fd;
+  cursor: pointer;
+  gap: 22px;
+}
+.contact-item:hover {
+  background: linear-gradient(110deg, #ffecd2 60%, #fcb69f 100%);
+  box-shadow: 0 7px 20px rgba(255,102,0,0.10);
+  border-color: #ff6600;
+  transform: translateY(-2px) scale(1.02);
+}
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #007acc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+  font-size: 2rem;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: background 0.3s, color 0.3s;
+  flex-shrink: 0;
+}
+.contact-icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+.contact-value {
+  font-size: 1.22rem;
+  color: #1a263a;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+@media (max-width: 600px) {
+  .contact-item {
+    max-width: 100vw;
+    padding: 16px 8px;
+    border-radius: 11px;
+    gap: 12px;
+  }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .contact-icon img {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-value {
+    font-size: 1.03rem;
+  }
+}
+       
       .social-links a img.custom-icon {
         width: 32px;
         height: 32px;
@@ -480,29 +408,34 @@
       </div>
     </div>
   </section>
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="contact-list">
-      <div class="contact-item">
-        <span class="contact-icon" style="background: #28a745;">
-          <img src="images/email.png" alt="Email">
-        </span>
-        <span class="contact-value"><a href="mailto:nasirabbas@gcuf.edu.pk">nasirabbas@gcuf.edu.pk</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon" style="background: #ff6600;">
-          <img src="images/phone.jpeg" alt="Phone">
-        </span>
-        <span class="contact-value">+92-302-6195414</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon" style="background: #007acc;">
-          <img src="images/gcuf.jpg" alt="Location">
-        </span>
-        <span class="contact-value">123 Main Street, Faisalabad, Pakistan</span>
-      </div>
+  <!-- Replace your contact section with the following, and use the below CSS for best results -->
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="contact-list">
+    <!-- Entire row is clickable for email -->
+    <a href="mailto:nasirabbas@gcuf.edu.pk" class="contact-item" style="text-decoration:none;">
+      <span class="contact-icon" style="background: #28a745;">
+        <img src="images/email.png" alt="Email">
+      </span>
+      <span class="contact-value">nasirabbas@gcuf.edu.pk</span>
+    </a>
+    <!-- Entire row is clickable for phone -->
+    <a href="tel:+923026195414" class="contact-item" style="text-decoration:none;">
+      <span class="contact-icon" style="background: #ff6600;">
+        <img src="images/phone.jpeg" alt="Phone">
+      </span>
+      <span class="contact-value">+92-302-6195414</span>
+    </a>
+    <!-- Address row is not clickable -->
+    <div class="contact-item">
+      <span class="contact-icon" style="background: #007acc;">
+        <img src="images/gcuf.jpg" alt="Location">
+      </span>
+      <span class="contact-value">123 Main Street, Faisalabad, Pakistan</span>
     </div>
-  </section>
+  </div>
+</section>
   <div class="social-links">
     <a href="https://www.facebook.com/nasir.abbas.58511" aria-label="Facebook">
       <img src="images/facebook.jpeg" alt="Facebook Icon" class="custom-icon">
