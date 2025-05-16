@@ -15,23 +15,19 @@
       color: #333;
       scroll-behavior: smooth;
       min-height: 100vh;
-      /* Portfolio-wide background image with overlay for readability */
-      background: 
-        linear-gradient(120deg, rgba(194, 233, 251, 0.8), rgba(161, 196, 253, 0.8)), 
-        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmvbNRYmM1w3u9j7w0ZAmAe-K3_l4RoI3a8w&s') center/cover no-repeat fixed;
-      /* Fallback color */
+      background:
+        linear-gradient(120deg, rgba(194, 233, 251, 0.8), rgba(161, 196, 253, 0.8)),
+        url('images/portfolio-bg.jpg') center/cover no-repeat fixed;
       background-color: #a1c4fd;
     }
-
     header {
       background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmBhXJPDYsFooinRIXjegWrmEgJXDFJ3SP_w&s') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 80px 20px;
+      padding: 80px 20px 30px 20px;
       position: relative;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     }
-
     header::before {
       content: '';
       position: absolute;
@@ -39,12 +35,10 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
-
     header * {
       position: relative;
       z-index: 1;
     }
-
     nav {
       margin-top: 25px;
       display: flex;
@@ -53,7 +47,6 @@
       gap: 12px;
       z-index: 1;
     }
-
     nav a {
       font-size: 1rem;
       padding: 10px 20px;
@@ -68,33 +61,28 @@
       text-decoration: none;
       transition: all 0.3s ease;
     }
-
     nav a:hover {
       background: #ffcc00;
       color: #003366;
       transform: scale(1.05);
     }
-
     .container {
       max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
     }
-
     .section {
-      background: rgba(255,255,255, 0.95);
+      background: rgba(255,255,255, 0.97);
       margin: 24px 0;
       padding: 24px;
       border-radius: 16px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .section:hover {
       transform: translateY(-5px) scale(1.01);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
-
     h2 {
       color: #003366;
       font-size: 2rem;
@@ -102,20 +90,16 @@
       margin-bottom: 14px;
       letter-spacing: 0.5px;
     }
-
     ul {
       padding-left: 22px;
     }
-
     ul li {
       margin-bottom: 8px;
     }
-
     a {
       color: #0055a5;
       text-decoration: underline;
     }
-
     .profile-pic {
       width: 180px;
       height: 180px;
@@ -127,7 +111,7 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.33);
     }
 
-    /* Publications Styling */
+    /* Publications Responsive Cards */
     .publications-list {
       display: flex;
       flex-wrap: wrap;
@@ -208,7 +192,6 @@
       color: #003366;
     }
 
-    /* Social links */
     .social-links {
       text-align: center;
       margin-top: 32px;
@@ -287,26 +270,32 @@
       border-color: #ff6600;
     }
     .contact-icon {
-      width: 38px;
-      height: 38px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: #007acc;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 16px;
+      margin-right: 18px;
       box-shadow: 0 2px 7px rgba(0,0,0,0.12);
-      font-size: 1.45rem;
+      font-size: 1.6rem;
       color: #fff;
       border: 2px solid #fff;
       transition: background 0.3s, color 0.3s;
+    }
+    .contact-icon img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
     }
     .contact-item:hover .contact-icon {
       background: #ff6600;
       color: #fffbe7;
     }
     .contact-value, .contact-value a {
-      font-size: 1.08rem;
+      font-size: 1.18rem;
       color: #1a263a;
       text-decoration: none;
       font-weight: 500;
@@ -322,7 +311,7 @@
       color: #ff6600;
     }
 
-    /* Responsive Styles */
+    /* Improved Mobile Styles */
     @media screen and (max-width: 900px) {
       .container {
         padding: 10px;
@@ -330,45 +319,110 @@
       .publications-list {
         flex-direction: column;
         align-items: center;
+        gap: 18px;
       }
       .publication {
-        width: 90vw;
+        width: 94vw;
         max-width: 98vw;
+        min-width: unset;
+        padding: 18px 4vw 12px 4vw;
       }
     }
-    @media screen and (max-width: 600px) {
-      header h1 {
-        font-size: 1.7rem;
+    @media screen and (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 7px;
+      }
+      nav a {
+        font-size: 1.04rem;
+        min-width: 70vw;
+        margin: 0 auto;
+      }
+      header {
+        padding: 45px 8px 16px 8px;
+      }
+      .profile-pic {
+        width: 110px;
+        height: 110px;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .container {
+        padding: 2vw;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .section {
+        padding: 13px 4px;
+        margin: 13px 0;
+        border-radius: 9px;
+      }
+      h2 {
+        font-size: 1rem;
+        margin-bottom: 6px;
       }
       .publications-list {
-        gap: 15px;
+        gap: 8px;
       }
       .publication {
         min-width: unset;
         width: 99vw;
-        padding: 12px 4vw;
+        max-width: 100vw;
+        padding: 11px 0.5vw 6px 0.5vw;
+        border-radius: 12px;
+      }
+      .publication-img-wrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 9px;
+      }
+      .publication img {
+        border-radius: 7px;
+      }
+      .publication-details p {
+        font-size: 0.9rem;
       }
       .contact-list, .contact-item {
         min-width: unset;
         width: 100%;
         max-width: 100vw;
-        padding: 13px 10px;
+        padding: 12px 8px;
+        border-radius: 9px;
       }
       .contact-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 1.1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        margin-right: 10px;
+        border-radius: 9px;
+      }
+      .contact-icon img {
+        width: 28px;
+        height: 28px;
+      }
+      .contact-value, .contact-value a {
+        font-size: 1.07rem;
       }
       .profile-pic {
-        width: 120px;
-        height: 120px;
-      }
-      nav a {
-        font-size: 0.95rem;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
       }
       .social-links a img.custom-icon {
-        width: 44px;
-        height: 44px;
+        width: 32px;
+        height: 32px;
+        margin: 3px;
+      }
+      footer {
+        padding: 10px;
+        font-size: 0.8rem;
+      }
+      .scroll-top {
+        padding: 7px 10px;
+        font-size: 1rem;
+        bottom: 18px;
+        right: 12px;
       }
     }
   </style>
@@ -473,20 +527,20 @@
     <h2>Contact</h2>
     <div class="contact-list">
       <div class="contact-item">
-        <span class="contact-icon" style="background: #28a745;">
-          <img src="images/email.png" alt="Email" style="width:24px; height:24px;">
+        <span class="contact-icon">
+          <img src="images/email.png" alt="Email" style="width:28px; height:28px; object-fit:contain;">
         </span>
         <span class="contact-value"><a href="mailto:nasirabbas@gcuf.edu.pk">nasirabbas@gcuf.edu.pk</a></span>
       </div>
       <div class="contact-item">
-        <span class="contact-icon" style="background: #ff6600;">
-          <img src="images/phone.jpeg" alt="Phone" style="width:22px; height:22px;">
+        <span class="contact-icon" style="width: 28px; height: 28px;; object-fit:cover; border-radius:inherit;">
+          <img src="images/phone.jpeg" alt="Phone">
         </span>
         <span class="contact-value">+92-302-6195414</span>
       </div>
       <div class="contact-item">
-        <span class="contact-icon" style="background: #007acc;">
-          <img src="images/gcuf.jpg" alt="Location" style="width:22px; height:22px;">
+        <span class="contact-icon" style="width: 28px;; height: 28px; object-fit:contain; ">
+            <img src="images/gcuf.jpg" alt="Location" class="location-icon">
         </span>
         <span class="contact-value">123 Main Street, Faisalabad, Pakistan</span>
       </div>
@@ -507,7 +561,7 @@
 <footer>
   <p>&copy; 2025 Dr. Nasir Abbas | All Rights Reserved</p>
 </footer>
-<div class="scroll-top" onclick="scrollToTop()">↑</div>
+<div class="scroll-top" onclick="scrollToTop()">Back to Top</div>
 <script>
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
