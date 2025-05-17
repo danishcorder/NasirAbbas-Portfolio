@@ -1,8 +1,3 @@
-<!--
-This version fixes:
-- The last two publication cards now have <div class="pub-details"> BEFORE <img> in the HTML.
-- This, combined with your CSS, ensures the last two publication images appear BELOW the text on mobile.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,6 +155,24 @@ This version fixes:
       border-radius: 2px;
       margin-top: 4px;
     }
+    /* --- Experience Section Headings Styling --- */
+    .highlight-exp {
+      font-weight: 600;
+      color: #ff6600;
+      margin-right: 7px;
+      font-size: 1.03rem;
+      display: inline-block;
+    }
+    .tag-exp {
+      background: #d5eaff;
+      color: #0055a5;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 0.93rem;
+      margin: 0 4px 4px 0;
+      font-weight: 500;
+      display: inline-block;
+    }
     .intro {
       font-size: 0.98rem;
       color: #1a263a;
@@ -241,7 +254,8 @@ This version fixes:
       flex-direction: column;
       align-items: stretch;
       transition: transform 0.2s, box-shadow 0.2s;
-      min-height: 180px;
+      min-height: 210px;
+      /* increased min-height for bigger images */
       max-width: 99vw;
       margin: 0 auto;
     }
@@ -251,11 +265,12 @@ This version fixes:
     }
     .pub-card img {
       width: 100%;
-      height: 80px;
+      height: 155px;
       object-fit: cover;
       background: #e2eafc;
       border-bottom: 1px solid #e0e7ff;
       order: 0;
+      /* increased height for larger images */
     }
     .pub-details {
       flex: 1;
@@ -292,7 +307,7 @@ This version fixes:
         grid-template-columns: 1fr;
       }
       .pub-card img {
-        height: 80px;
+        height: 155px;
       }
     }
     @media (max-width: 600px) {
@@ -312,6 +327,7 @@ This version fixes:
         order: 1;
         border-bottom: none;
         border-top: 1px solid #e0e7ff;
+        height: 155px;
       }
     }
     .social-links {
@@ -456,6 +472,22 @@ This version fixes:
         font-size: 1.05rem;
       }
     }
+    /* Experience vertical list custom */
+    .specializations-list {
+      margin: 10px 0 0 0;
+      padding: 0 0 0 18px;
+      list-style: disc;
+    }
+    .specializations-list li {
+      display: list-item !important;
+      background: none !important;
+      color: #0055a5 !important;
+      padding: 0 !important;
+      margin: 0 0 7px 0 !important;
+      font-size: 0.99rem;
+      font-weight: 500;
+      border-radius: 0;
+    }
   </style>
 </head>
 <body>
@@ -497,15 +529,15 @@ This version fixes:
     <h2 class="section-title">Education & Qualifications</h2>
     <ul class="education-list">
       <li>
-        <span class="icon">🎓</span>
-        <span class="degree">PhD Commerce</span>
+        <span class="icon"></span>
+        <span class="degree">🎓PhD Commerce</span>
         <span class="field">Accounting & Finance</span>
         <span class="place">BZU Multan</span>
         <span class="year">2023-2026</span>
       </li>
       <li>
-        <span class="icon">🎓</span>
-        <span class="degree">MS Business Administration</span>
+        <span class="icon"></span>
+        <span class="degree">🎓MS Business Administration</span>
         <span class="place">NUML Islamabad</span>
         <span class="year">2012-2014</span>
       </li>
@@ -517,16 +549,21 @@ This version fixes:
       <span class="icon">🏫</span> Lecturer <span class="at">@ GC University Faisalabad</span>
       <span class="year">2011 - Present</span>
     </div>
-    <ul class="role-list">
-      <li>Accounting & Finance</li>
-      <li>Islamic Finance</li>
-      <li>Business & Management</li>
-      <li>Research & Publications</li>
-      <li>Event Organization & Mentoring</li>
-      <li>Digital Tools in Education</li>
-      <li>Academic Writing Specialist</li>
-      <li>Thesis Writing & Editing</li>
-    </ul>
+    <div style="margin-bottom:10px;">
+      <span class="highlight-exp">Specializations:</span>
+      <ul class="specializations-list">
+        <li>Accounting &amp; Finance</li>
+        <li>Islamic Finance</li>
+        <li>Business &amp; Management</li>
+        <li>Research &amp; Publications</li>
+        <li>Event Organization &amp; Mentoring</li>
+        <li>Digital Tools in Education</li>
+        <li>Academic Writing Specialist</li>
+        <li>Thesis Writing &amp; Editing</li>
+      </ul>
+    </div>
+    
+    
     <p style="margin-top:20px;"><strong>Profiles:</strong></p>
     <div style="display: flex; gap: 18px; align-items: center; margin-top: 10px; flex-wrap:wrap;">
       <a href="https://orcid.org/0009-0000-1711-2963" aria-label="ORCID" target="_blank">
@@ -570,8 +607,8 @@ This version fixes:
       <div class="pub-card">
         <div class="pub-details">
           <p>
-            Gohar Mahmood; Fazeel Abdullah; Nasir Abbas; Muhammad Ali Raza (2024).<br>
-            <em>Fostering Social Entrepreneurial Intentions</em>
+           Nasir Abbas,Gohar Mahmood;Fazeel.. (2024).<br>
+            <em>Fostering Social Entrepreneurial..</em>
             <a href="https://doi.org/10.26710/sbsee.v5i3.2750" target="_blank">DOI</a>
           </p>
         </div>
@@ -580,9 +617,9 @@ This version fixes:
       <div class="pub-card">
         <div class="pub-details">
           <p>
-            Muhammad Adnan Afzal; Sadia Munir; Nasir Abbas; Adil Farooq (2024).<br>
-            <em>A Retrospective of Earnings Management: Bibliometric Analysis</em>
-            <a href="https://doi.org/10.26710/jafee.v10i2.3039" target="_blank">DOI</a>
+              Nasir Abbas;Ali Raza; Zainab... (2024).<br>
+            <em>A Comprehensive Examination of ...</em>
+            <a href="https://doi.org/10.26710/jafee.v9i4.2885" target="_blank">DOI</a>
           </p>
         </div>
         <img src="images/pub5.jpeg" alt="Publication 4" />
@@ -608,7 +645,7 @@ This version fixes:
         <span class="contact-icon" style="background: #007acc;">
           <img src="images/gcuf.jpg" alt="Location">
         </span>
-        <span class="contact-value">123 Main Street, Faisalabad, Pakistan</span>
+        <span class="contact-value">GC University, Faisalabad, Pakistan</span>
       </div>
     </div>
   </section>
